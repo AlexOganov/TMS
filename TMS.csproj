@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7791354A-38D6-4110-9D4C-E6C3235B9BF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaeSystems.TestStations</RootNamespace>
+    <AssemblyName>TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tms.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestPointManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestPointManager.Designer.cs">
+      <DependentUpon>TestPointManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="TestPointManager.resx">
+      <DependentUpon>TestPointManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib\Controls\OpenFolderDialog\OpenFolderDialog.csproj">
+      <Project>{1dd7f8c5-7e9a-4ba2-9e76-ad4af327fb99}</Project>
+      <Name>OpenFolderDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Controls\OutputWindow\OutputWindow.csproj">
+      <Project>{966f670a-c352-4c94-8b92-68ca5246ab9f}</Project>
+      <Name>OutputWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Controls\ProgressTextBar\ProgressTextBar.csproj">
+      <Project>{61b7a3e2-4ad4-4d4f-99ad-b09a1c2bfcbe}</Project>
+      <Name>ProgressTextBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Controls\TabPageExtensions\TabPageExtensions.csproj">
+      <Project>{0ad0b617-45ea-4630-8e5d-06391cd03058}</Project>
+      <Name>TabPageExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Controls\TestPointPicker\TestPointPicker.csproj">
+      <Project>{230aa6fc-2123-48ee-8c85-624258b0dcf5}</Project>
+      <Name>TestPointPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Controls\UutComsControls\UutComsControls.csproj">
+      <Project>{d98c31df-c492-49b5-869b-bdd617023a0a}</Project>
+      <Name>UutComsControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\LibDatabase\LibDatabase.csproj">
+      <Project>{a2f7ace6-7bb9-4116-b9cd-db635a8e6b28}</Project>
+      <Name>LibDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\LibUutComs\LibUutComs.csproj">
+      <Project>{3b78e0f1-18e6-4158-bc72-bd4e826a2faf}</Project>
+      <Name>LibUutComs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Loggers\LibLoggerCsv\LibLoggerCsv.csproj">
+      <Project>{463b267f-0883-491b-bbba-69aff81bb8bc}</Project>
+      <Name>LibLoggerCsv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\Loggers\LibLoggerExcel\LibLoggerExcel.csproj">
+      <Project>{c9c696d5-568c-49a4-8acb-ec68d7201ec5}</Project>
+      <Name>LibLoggerExcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Interfaces\CommonInterfaces\CommonInterfaces.csproj">
+      <Project>{b01ded13-1c7e-46b1-90af-503a243fee17}</Project>
+      <Name>CommonInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tms.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
